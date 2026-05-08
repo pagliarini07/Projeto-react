@@ -1,0 +1,5 @@
+reflexao.md
+
+1. No código a parte que mais repetiu foi o style, porque foi colocado muita coisa direto no `App.jsx`.
+
+2. Se caso a lanchonete tivesse 30 itens, o projeto ainda funcionaria porque o `map()` mostra todos os itens sozinho. Mas a tela ficaria maior e o código ia ficar mais bagunçado. Se fosse um projeto maior, seria melhor separar mais as coisas para ficar mais organizado.
