@@ -1,6 +1,13 @@
+import { useState } from 'react'
 import ItemCardapio from './ItemCardapio'
 
 function App() {
+  const [totalPedido, setTotalPedido] = useState(0)
+
+  function adicionarItem() {
+    setTotalPedido((valorAtual) => valorAtual + 1)
+  }
+
   return (
     <div
       style={{
@@ -25,17 +32,29 @@ function App() {
           style={{
             textAlign: 'center',
             color: '#8b2e00',
-            marginBottom: '25px'
+            marginBottom: '10px'
           }}
         >
           Cardápio da Lanchonete
         </h1>
 
-        <ItemCardapio nome="Coxinha" preco={7.5} />
-        <ItemCardapio nome="Enroladinho de Salsicha" preco={6.0} />
-        <ItemCardapio nome="Empada" preco={8.0} />
-        <ItemCardapio nome="Kibe" preco={6.5} />
-        <ItemCardapio nome="Refrigerante" preco={5.0} />
+        <p
+          style={{
+            textAlign: 'center',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            color: '#5a1c00',
+            marginBottom: '25px'
+          }}
+        >
+          Total de itens no pedido: {totalPedido}
+        </p>
+
+        <ItemCardapio nome="Coxinha" preco={7.5} adicionarAoPedido={adicionarItem} />
+        <ItemCardapio nome="Enroladinho de Salsicha" preco={6.0} adicionarAoPedido={adicionarItem} />
+        <ItemCardapio nome="Empada" preco={8.0} adicionarAoPedido={adicionarItem} />
+        <ItemCardapio nome="Kibe" preco={6.5} adicionarAoPedido={adicionarItem} />
+        <ItemCardapio nome="Refrigerante" preco={5.0} adicionarAoPedido={adicionarItem} />
       </div>
     </div>
   )

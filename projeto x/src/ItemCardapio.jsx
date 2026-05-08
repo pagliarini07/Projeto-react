@@ -12,18 +12,27 @@ function ItemCardapio(props) {
         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.08)'
       }}
     >
-      <h2 style={{ margin: 0, fontSize: '18px' }}>{props.nome}</h2>
-      <span
+      <div>
+        <h2 style={{ margin: 0, fontSize: '18px' }}>{props.nome}</h2>
+        <p style={{ margin: '6px 0 0 0', color: '#555' }}>
+          R$ {props.preco.toFixed(2)}
+        </p>
+      </div>
+
+      <button
+        onClick={props.adicionarAoPedido}
         style={{
           backgroundColor: '#c94b00',
           color: '#fff',
-          padding: '8px 14px',
+          border: 'none',
+          padding: '10px 14px',
           borderRadius: '8px',
-          fontWeight: 'bold'
+          fontWeight: 'bold',
+          cursor: 'pointer'
         }}
       >
-        R$ {props.preco.toFixed(2)}
-      </span>
+        Adicionar ao pedido
+      </button>
     </div>
   )
 }
